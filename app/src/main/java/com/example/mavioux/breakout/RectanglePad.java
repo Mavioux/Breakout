@@ -14,15 +14,11 @@ public class RectanglePad implements View.OnTouchListener {
     private int xVelocity;
     private int width;
     private int height;
-
     private int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
     private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
 
-
-
-
+    
     public RectanglePad(Bitmap bmp){
-
         image = bmp;
         width = 300;
         height = 100;
@@ -32,57 +28,60 @@ public class RectanglePad implements View.OnTouchListener {
         image = Bitmap.createScaledBitmap(image, width, height, false);
     }
 
-    int getWidth() {
+    // Getters
+    public int getWidth() {
         return  width;
     }
 
-    int getHeight() {
+    public int getHeight() {
         return height;
     }
 
-    int getY() {
+    public int getY() {
         return y;
     }
 
-    int getX() {
+    public int getX() {
         return x;
     }
 
+    public int xVelocity(){
+        return xVelocity;
+    }
+
+    // Setters
     public void setX(int x){
         this.x = x;
     }
 
-    public void draw(Canvas canvas) {
+    public void setY(int y){
+        this.y = y;
+    }
 
+    public void setWidth(int width){
+        this.width = width;
+    }
+
+    public void setHeight(int height){
+        this.height = height;
+    }
+
+    public void setxVelocity(int xVelocity){
+        this.xVelocity = xVelocity;
+    }
+
+    // More functions
+    public void draw(Canvas canvas) {
         canvas.drawBitmap(image, x, y, null);
 
     }
 
     public void update(){
-
         if(x > screenWidth || x < 0) {
             xVelocity = -xVelocity;
         }
 
-
-
     }
-
-    /*@Override
-    public boolean onTouch(View view, MotionEvent e) {
-        float x = e.getX();
-        float y = e.getY();
-        switch (e.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                rectangePad.setX((int)e.getX());
-                break;
-            case MotionEvent.ACTION_UP:
-                break;
-            default:
-                break;
-        }
-        return true;
-    }*/
 
     @Override
     public boolean onTouch (View v, MotionEvent event) {
