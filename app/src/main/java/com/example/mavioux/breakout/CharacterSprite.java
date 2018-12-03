@@ -178,13 +178,13 @@ public class CharacterSprite {
             }*/
 
 
-            if((yReference > blocksArray[i].y -yVelocity   && yReference < blocksArray[i].y + blocksArray[i].rheight ) && (xReference > blocksArray[i].x && xReference < blocksArray[i].x + blocksArray[i].rwidth) && !blocksArray[i].broken ) {
-                if(blocksArray[i].x - xReference > blocksArray[i].y - yReference) {
-                        blocksArray[i].broken = true;
+            if((yReference > blocksArray[i].getY() -yVelocity   && yReference < blocksArray[i].getY() + blocksArray[i].getRheight() ) && (xReference > blocksArray[i].getX() && xReference < blocksArray[i].getX() + blocksArray[i].getRwidth()) && !blocksArray[i].getBroken() ) {
+                if(blocksArray[i].getX() - xReference > blocksArray[i].getY() - yReference) {
+                        blocksArray[i].setBroken(true);
                         yVelocity = -yVelocity;
                     }
                     else {
-                        blocksArray[i].broken = true;
+                    blocksArray[i].setBroken(true);
                         xVelocity = -xVelocity;
                     }
             }
