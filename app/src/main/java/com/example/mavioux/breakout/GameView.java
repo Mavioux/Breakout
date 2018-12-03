@@ -1,16 +1,11 @@
 package com.example.mavioux.breakout;
 
 import android.graphics.BitmapFactory;
-import android.graphics.Bitmap;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-
-import com.example.mavioux.breakout.R;
 
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
@@ -19,6 +14,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private CharacterSprite characterSprite;
     private RectanglePad rectanglePad;
     Block[] blocksArray;
+
 
     public GameView(Context context){
         super(context);
@@ -72,7 +68,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void draw(Canvas canvas) {
-        super.draw(canvas);
+
+        // 1st way: colors (url for hex codes: https://www.color-hex.com/ )
+        canvas.drawRGB(126,133,57);
+
+        // fill canva with black color
+        //super.draw(canvas);
         characterSprite.draw(canvas);
         characterSprite.update(rectanglePad);
         rectanglePad.draw(canvas);

@@ -1,6 +1,5 @@
 package com.example.mavioux.breakout;
 
-import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 import android.graphics.Canvas;
 

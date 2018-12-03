@@ -1,16 +1,8 @@
 package com.example.mavioux.breakout;
 
-import android.app.Notification;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.view.SurfaceView;
-import android.view.SurfaceHolder;
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 
 public class CharacterSprite {
     private Bitmap image;
@@ -95,17 +87,11 @@ public class CharacterSprite {
     }
 
 
-
-
-
-
-
     public void draw(Canvas canvas) {
         canvas.drawBitmap(image, x, y, null);
     }
 
     public void update(RectanglePad rectanglePad){
-
 
         x += xVelocity ;
         y += yVelocity ;

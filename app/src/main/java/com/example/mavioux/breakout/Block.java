@@ -1,14 +1,7 @@
 package com.example.mavioux.breakout;
 
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.view.SurfaceView;
-import android.view.SurfaceHolder;
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 
 
 public class Block  {
