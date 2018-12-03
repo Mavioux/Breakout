@@ -20,10 +20,10 @@ public class RectanglePad implements View.OnTouchListener {
 
     public RectanglePad(Bitmap bmp){
         image = bmp;
-        width = 300;
-        height = 100;
-        x = screenWidth/2 - 150;
-        y = screenHeight - 100;
+        width = (int)(screenWidth / 2.75) ;
+        height = screenHeight / 15;
+        x = screenWidth/2 - width/2;
+        y = screenHeight - height;
         xVelocity = 10;
         image = Bitmap.createScaledBitmap(image, width, height, false);
     }
