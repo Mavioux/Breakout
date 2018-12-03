@@ -12,6 +12,8 @@ public class RectanglePad implements View.OnTouchListener {
     private int x;
     private int y;
     private int xVelocity;
+    private int width;
+    private int height;
 
     private int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
     private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
@@ -22,10 +24,28 @@ public class RectanglePad implements View.OnTouchListener {
     public RectanglePad(Bitmap bmp){
 
         image = bmp;
+        width = 300;
+        height = 100;
         x = screenWidth/2 - 150;
         y = screenHeight - 100;
         xVelocity = 10;
-        image = Bitmap.createScaledBitmap(image, 300, 100, false);
+        image = Bitmap.createScaledBitmap(image, width, height, false);
+    }
+
+    int getWidth() {
+        return  width;
+    }
+
+    int getHeight() {
+        return height;
+    }
+
+    int getY() {
+        return y;
+    }
+
+    int getX() {
+        return x;
     }
 
     public void setX(int x){

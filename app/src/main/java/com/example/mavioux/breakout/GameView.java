@@ -2,6 +2,7 @@ package com.example.mavioux.breakout;
 
 import android.graphics.BitmapFactory;
 import android.graphics.Bitmap;
+import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 import android.content.Context;
@@ -35,7 +36,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     public void update() {
 
-        characterSprite.update();
+        characterSprite.update(rectanglePad);
         for (int i = 0; i < blocksArray.length; i++) {
             blocksArray[i].update();
         }
@@ -73,7 +74,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas) {
         super.draw(canvas);
         characterSprite.draw(canvas);
-        characterSprite.update();
+        characterSprite.update(rectanglePad);
         rectanglePad.draw(canvas);
         rectanglePad.update();
         for (int i = 0; i < blocksArray.length; i++) {
@@ -81,5 +82,25 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
 
+        int x = (int) event.getX();
+        int eventAction = event.getAction();
+
+        switch (eventAction) {
+            case MotionEvent.ACTION_DOWN:
+                rectanglePad.setX(x - rectanglePad.getWidth()/2);
+                break;
+
+            case MotionEvent.ACTION_MOVE:
+                break;
+
+            case MotionEvent.ACTION_UP:
+                break;
+        }
+        return true;
+    }
 }
+
+
