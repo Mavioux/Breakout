@@ -20,10 +20,10 @@ public class CharacterSprite {
     private int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
     private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
     Block[] blocksArray;
-    int ballWidth;
-    int ballHeight;
-    int xReference;
-    int yReference;
+    private int ballWidth;
+    private int ballHeight;
+    private int xReference;
+    private int yReference;
 
 
 
@@ -38,13 +38,67 @@ public class CharacterSprite {
         yReference = y - ballHeight/2;
     }
 
-    int getScreenWidth() {
+    public int getScreenWidth() {
         return screenWidth;
     }
 
-    int getScreenHeight() {
+    public int getScreenHeight() {
         return screenHeight;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getxVelocity() {
+        return xVelocity;
+    }
+
+    public void setxVelocity(int xVelocity) {
+        this.xVelocity = xVelocity;
+    }
+
+    public int getyVelocity() {
+        return yVelocity;
+    }
+
+    public void setyVelocity(int yVelocity) {
+        this.yVelocity = yVelocity;
+    }
+
+    public int getBallWidth() {
+        return ballWidth;
+    }
+
+    public int getBallHeight() {
+        return ballHeight;
+    }
+
+    public int getxReference() {
+        return xReference;
+    }
+
+    public int getyReference() {
+        return yReference;
+    }
+
+
+
+
+
+
 
     public void draw(Canvas canvas) {
         canvas.drawBitmap(image, x, y, null);
