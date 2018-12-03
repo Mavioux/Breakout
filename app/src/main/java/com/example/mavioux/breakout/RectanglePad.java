@@ -17,7 +17,7 @@ public class RectanglePad implements View.OnTouchListener {
     private int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
     private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
 
-    
+
     public RectanglePad(Bitmap bmp){
         image = bmp;
         width = 300;
